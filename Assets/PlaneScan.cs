@@ -8,23 +8,27 @@ using UnityEngine.XR.ARKit;
 
 public class PlaneScan : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        //ARKitSessionSubsystem
-    }
+    [SerializeField]
+    public GameObject placePrefab;
+    private Vector2 touchPosition = default;
+    private ARRaycastManager aRRaycastManager;
+    private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    private void Awake() => aRRaycastManager = GetComponent<ARRaycastManager>();
 
-    // Update is called once per frame
     void Update()
     {
-        SetMap();
-    }
-
-    private void SetMap()
-    {
-        // GameObject session = GameObject.FindGameObjectWithTag("session");
-        // ARPlaneManager manager = session.GetComponent<ARPlaneManager>();
-        // GameObject map = manager.planePrefab;
-        // Debug.Log(map.transform.localScale.x + " " + map.transform.localScale.y + " " + map.transform.localScale.z);
+        Touch touch = Input.GetTouch(0);
+        touchPosition = touch.position;
+        if (touch.phase == TouchPhase.Began)
+        {
+            if (aRRaycastManager.Raycast(touchPosition, hits, UnityEngine.XR.ARSubsystems.TrackableType.All))
+            {
+                Pose hitPose = hits[0].pose;
+                Instantiate(placePrefab, hitPose.position, Quaternion.identity);
+                gameObject.GetComponent<ARPointCloudManager>().SetTrackablesActive(false);
+                gameObject.GetComponent<ARPlaneManager>().SetTrackablesActive(false);
+                enabled = false;
+            }
+        }
     }
 }

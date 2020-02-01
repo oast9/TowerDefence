@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 734261327}
   - component: {fileID: 734261326}
   - component: {fileID: 734261325}
+  - component: {fileID: 734261329}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: Untagged
@@ -339,6 +340,28 @@ Transform:
   m_Father: {fileID: 193935032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &734261329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734261323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32187365ced0c42219cde2b57c99b323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings:
+    threshold: 0.9
+    softKnee: 0.5
+    radius: 2
+    intensity: 0.7
+    highQuality: 1
+    antiFlicker: 0
+    dirtTexture: {fileID: 0}
+    dirtIntensity: 2.5
+  m_Shader: {fileID: 0}
 --- !u!1 &1359241029
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +525,7 @@ GameObject:
   - component: {fileID: 2000729538}
   - component: {fileID: 2000729537}
   - component: {fileID: 2000729536}
+  - component: {fileID: 2000729539}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -574,3 +598,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 87.77, y: 0, z: 0}
+--- !u!114 &2000729539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000729535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32187365ced0c42219cde2b57c99b323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings:
+    threshold: 0.9
+    softKnee: 0.5
+    radius: 2
+    intensity: 0.7
+    highQuality: 1
+    antiFlicker: 0
+    dirtTexture: {fileID: 0}
+    dirtIntensity: 2.5
+  m_Shader: {fileID: 4800000, guid: 60c76f020752649468487cc3ff796f28, type: 3}

@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PlaneScan 2.cs" />
     <Compile Include="Assets\PlaneScan.cs" />
     <Compile Include="Assets\Scripts\Mechanics\GameMaster 2.cs" />
     <Compile Include="Assets\Scripts\Mechanics\GameMaster.cs" />

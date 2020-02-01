@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{100AF85B-5DA5-F400-1219-77DA74C28539}|Модульные тесты">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Mechanics/WaveSpawner.cs">
+    <Files>
+      <File FileName="Assets/PlaneScan.cs" Line="11" Column="11" />
+      <File FileName="Assets/Scripts/Mechanics/WaveSpawner.cs" Line="6" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TowerDefence1" expanded="True" selected="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Assets" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="Mechanics" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e533f997-072a-4a49-ba54-db24781b2836" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor-firstpass PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

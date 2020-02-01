@@ -63,15 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Standard Assets\Effects\Bloom\Editor\BloomEditor 2.cs" />
     <Compile Include="Assets\Standard Assets\Effects\Bloom\Editor\BloomEditor.cs" />
-    <Compile Include="Assets\Standard Assets\Effects\Bloom\Editor\BloomGraphDrawer 2.cs" />
     <Compile Include="Assets\Standard Assets\Effects\Bloom\Editor\BloomGraphDrawer.cs" />
-    <Compile Include="Assets\Standard Assets\Effects\Common\Editor\EditorGUIHelper 2.cs" />
     <Compile Include="Assets\Standard Assets\Effects\Common\Editor\EditorGUIHelper.cs" />
-    <Compile Include="Assets\Standard Assets\Effects\Common\Editor\FieldFinder 2.cs" />
     <Compile Include="Assets\Standard Assets\Effects\Common\Editor\FieldFinder.cs" />
-    <Compile Include="Assets\Standard Assets\Effects\Common\Editor\MinDrawer 2.cs" />
     <Compile Include="Assets\Standard Assets\Effects\Common\Editor\MinDrawer.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>/Users/daragrigoruk/Documents/GitHub/TowerDefence/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>

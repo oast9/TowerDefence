@@ -13,7 +13,7 @@ public class WaveSpawner : MonoBehaviour
     public Text minionsUpgradeText;
     public Text surrentMinionsLvText;
     public float timeBetweenWaves = 5f; //максимальная задержка между волнами
-    private float countdown = 10f; //время ожидания следующей волны
+    private float countdown = 2f; //время ожидания следующей волны
     //public int wavesCount = 0; //общее количество волн
     public static int enemiesAlive = 0; //всего врагов на карте в текущий момент
     // public static int healthMult = 1; //множитель жизни врагов
@@ -26,11 +26,14 @@ public class WaveSpawner : MonoBehaviour
     public PhaseManager phaseManager;
     public int roadToGo; //по какой дороге идти
 
+    [SerializeField]private bool phaseChanged;
+
     void Start() {
         if (playerControl == 1) {
             minionsUpgradeText.text = "$" + minionsUpgradeLv2Cost.ToString();
             surrentMinionsLvText.text = minionsLv.ToString();
         }
+        phaseChanged = true;
         phaseManager = PhaseManager.instance;
         playerStats = GameObject.FindGameObjectWithTag($"Player{playerControl}").GetComponent<PlayerStats>();
         minionsLv = 1;
@@ -41,11 +44,17 @@ public class WaveSpawner : MonoBehaviour
     {
         
         if (playerControl == 1)
-        enemiesAliveText.text = enemiesAlive.ToString();
+            enemiesAliveText.text = enemiesAlive.ToString();
         if (enemiesAlive > 0) {
+            if (phaseChanged && playerControl == 1)
+                phaseChanged = false;
             return;
         }
  
+        if (enemiesAlive <= 0 && !phaseChanged && playerControl == 1) {
+            phaseChanged = true;
+            phaseManager.ChangePhase();
+        }
         if (countdown <= 0f && PlayerStats.role == 1 && playerControl == 1) {
             StartCoroutine(StandartWave()); //запуск функции с паузой
             // StartCoroutine(HeavyWave());
@@ -68,21 +77,28 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine(StandartWave());
             PlayerStats.Waves++;
             roadToGo = Random.Range(1,4);
+            countdown = timeBetweenWaves;
             
             if (playerControl == 1)
             surWaveText.text = PlayerStats.Waves.ToString();
             return;
         }
         
-        countdown -= Time.deltaTime;
-        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity); //Проверка, что откат не будет меньше нуля
+        if (PlayerStats.role == 1 && playerControl == 1) {
+            countdown -= Time.deltaTime;
+            countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity); //Проверка, что откат не будет меньше нуля
+        }
+        else if (PlayerStats.role == 2 && playerControl == 2) {
+            countdown -= Time.deltaTime;
+            countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity); //Проверка, что откат не будет меньше нуля
+        }
+
         if (playerControl == 1)
             waveCountdownText.text = string.Format("{0:00.00}",countdown); //отображение числа в виде в секунд с милисекундами    
 
  
     }
     IEnumerator StandartWave() {
-                
         Wave wave = waves[0];
         for (int i = 0; i < wave.count; i++) {
             if (minionsLv == 1)

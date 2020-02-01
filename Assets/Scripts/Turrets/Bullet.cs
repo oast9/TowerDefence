@@ -59,15 +59,21 @@ public class Bullet : MonoBehaviour
                      //Если коллайдер врага попадает в момент появления сферы - он задет взрывом и получает стандартный урон
         Collider[] colliders = Physics.OverlapSphere(transform.position, splashRadius);
         foreach(Collider collider in colliders) {
-            if (collider.tag == "Enemy") {
+            if (collider.tag == "Enemy" || collider.tag == "Engineer") {
                 Damage(collider.transform);
             }
         }
     }
 
     void Damage(Transform enemy) { //Урон по врагу
-        Enemy e = enemy.GetComponent<Enemy>();
-        e.TakeDamage(damage);
+        if (enemy.GetComponent<Enemy>() != null) {
+            Enemy e = enemy.GetComponent<Enemy>();
+            e.TakeDamage(damage);
+        }
+         if (enemy.GetComponent<Engineer>() != null) {
+            Engineer e = enemy.GetComponent<Engineer>();
+            e.TakeDamage(damage);
+        }
     }
 
     void OnDrawGizmosSelected() { //создание проекции сферы взрыва в редакторе

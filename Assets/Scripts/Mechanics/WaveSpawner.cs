@@ -39,6 +39,8 @@ public class WaveSpawner : MonoBehaviour
     
     void Update()
     {
+        
+        if (playerControl == 1)
         enemiesAliveText.text = enemiesAlive.ToString();
         if (enemiesAlive > 0) {
             return;
@@ -56,6 +58,8 @@ public class WaveSpawner : MonoBehaviour
             countdown = timeBetweenWaves;
            // wavesCount++;
             PlayerStats.Waves++;
+            
+            if (playerControl == 1)
             surWaveText.text = PlayerStats.Waves.ToString();
             return;
         }
@@ -64,14 +68,16 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine(StandartWave());
             PlayerStats.Waves++;
             roadToGo = Random.Range(1,4);
+            
+            if (playerControl == 1)
             surWaveText.text = PlayerStats.Waves.ToString();
             return;
         }
         
         countdown -= Time.deltaTime;
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity); //Проверка, что откат не будет меньше нуля
-
-        waveCountdownText.text = string.Format("{0:00.00}",countdown); //отображение числа в виде в секунд с милисекундами    
+        if (playerControl == 1)
+            waveCountdownText.text = string.Format("{0:00.00}",countdown); //отображение числа в виде в секунд с милисекундами    
 
  
     }

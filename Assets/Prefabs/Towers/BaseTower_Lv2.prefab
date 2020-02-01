@@ -294,7 +294,7 @@ MonoBehaviour:
   damageOverTime: 1
   slowPrc: 0.3
   healthBar: {fileID: 2934804531771888221}
-  startHealth: 0
+  startHealth: 25
   shards: 50
   turretDieEffect: {fileID: 0}
   playerControl: 0

@@ -19,26 +19,30 @@ public class BuildManager : MonoBehaviour
     private TurretBlueprint turretToBuild;
     private InteractionControllerCells selectedCell;
     public NodeUI nodeUI;
+    public EngineerUI engineerUI;
 
     public bool CanBuild { get { return turretToBuild != null; } }
     //Свойство - если turretToBuild не null, возвращаем результат true
     public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
     //Свойство - имеются ли средства на покупку турели
 
-    public void SelectCell(InteractionControllerCells cell) {
+    public void SelectCell(InteractionControllerCells cell, int tower_type) { //определяет тип башни 0 - нету, 1 - боевая, 2 - инженерная
         if (selectedCell == cell) {
             DeselectCell();
             return;
         }
         selectedCell = cell;
         turretToBuild = null;
-
-        nodeUI.SetTarget(cell);
+        if (tower_type == 1)
+            nodeUI.SetTarget(cell);
+        else if (tower_type == 2)
+            engineerUI.SetTarget(cell);
     }
 
     public void DeselectCell() {
         selectedCell = null;
         nodeUI.Hide();
+        engineerUI.Hide();
     }
     public void SelectTurretToBuild(TurretBlueprint turret) {
         turretToBuild = turret;

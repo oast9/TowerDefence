@@ -51,7 +51,10 @@ public class InteractionControllerCells : MonoBehaviour
             return;
 
         if (turret != null) { //Выбор туррели, если она есть в ячейке
-            buildManager.SelectCell(this);
+            if(turret.GetComponent<TurretParameters>() != null)
+                buildManager.SelectCell(this, 1);
+            else if(turret.GetComponent<EngineerTower>() != null)
+                buildManager.SelectCell(this, 2);
             return;
         }
 
@@ -99,6 +102,10 @@ public class InteractionControllerCells : MonoBehaviour
         Destroy(beffect, 0.5f); //Сотворить и уничтожить эффект постройки
 
         Debug.Log("The turret build. Shards left: " + PlayerStats.Money);
+    }
+
+    public void ChangeMode(int engineerMode) {
+        turret.GetComponent<EngineerTower>().ChangeEngineerMode(engineerMode);
     }
 
     public void UpgradeTower() {

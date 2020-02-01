@@ -13,6 +13,8 @@ public class Engineer : MonoBehaviour
     public float assimilateTime = 5f; //скорость захвата построек
     public int repairPower = 1; //сколько хитов лечит
     public float repairRate = 2f;
+
+    public EngineerTower parentTower;
     
     [SerializeField]private float SurRepairRate = 0f;
     [SerializeField]private float SurAssimilateTime = 0f; //скорость захвата построек
@@ -69,7 +71,7 @@ public class Engineer : MonoBehaviour
                         assimilateTime = 0f;
                     }
                     else {
-                        assimilateTime += Time.deltaTime;
+                        SurAssimilateTime += Time.deltaTime;
                     }
                 }
                 else {
@@ -114,6 +116,7 @@ public class Engineer : MonoBehaviour
     void Die() {
         //PlayerStats.Money += shards; //получение денег
         //WaveSpawner.enemiesAlive--;
+        parentTower.engineersCount--;
         GameObject dieEffect = Instantiate(enemyDieEffect, transform.position, transform.rotation); //активация эффекта смерти
         Destroy(gameObject); //уничтожение объекта
         Destroy(dieEffect, dieEffectLive); //уничтожение эффекта смерти

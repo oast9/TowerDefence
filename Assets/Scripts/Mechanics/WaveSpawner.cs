@@ -151,6 +151,30 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
+    public void SpawnUpgradeForTardis() {
+        if (minionsLv == 1) {
+            if (Tardis.Money < minionsUpgradeLv2Cost) {
+                return;
+            }
+            else {
+                minionsLv++;
+                Tardis.Money -= minionsUpgradeLv2Cost;
+            }
+
+        }
+        else if (minionsLv == 2) {
+            if (Tardis.Money < minionsUpgradeLv3Cost) {
+                return;
+            }
+            else {
+                minionsLv++;
+                Tardis.Money -= minionsUpgradeLv3Cost;
+                
+            }
+
+        }
+    }
+
     // //Создание волн враго по типам
     // IEnumerator HeavyWave() {
                 

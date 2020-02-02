@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 8909253543937889094}
   - component: {fileID: 8909253543937889093}
   m_Layer: 0
-  m_Name: BaseTower Lv1
+  m_Name: BaseTower Lv1 2
   m_TagString: BattleTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4aabb79a80f754594fd066b7c3dac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 3
   health: 15
   target: {fileID: 0}
   targetEnemy: {fileID: 0}
@@ -323,7 +323,7 @@ MonoBehaviour:
   damageOverTime: 1
   slowPrc: 0.3
   healthBar: {fileID: 1304684018819435456}
-  startHealth: 15
+  startHealth: 0
   shards: 15
   turretDieEffect: {fileID: 0}
   playerControl: 0

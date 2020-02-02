@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 6052440532328665943}
   - component: {fileID: 2447392833428850942}
   m_Layer: 0
-  m_Name: EngineerTowerLv3
+  m_Name: EngineerTowerLv3 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,12 +220,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 30
   playerControl: 0
-  engineersMaxCount: 4
+  engineersMaxCount: 0
   engineersCount: 0
-  engineersSpawnTime: 2
-  engineerSpawnVector_Y: 0.2
+  engineersSpawnTime: 3
+  engineerSpawnVector_Y: 0
   engineerSpawnPlace: {x: 0, y: 0, z: 0}
-  engineerPrefab: {fileID: 1693356427, guid: 8354eb3f965e89f4ab2d0ae93bfdc0ee, type: 3}
+  engineerPrefab: {fileID: 0}
   engineerMode: 1
   healthBar: {fileID: 0}
   startHealth: 0
@@ -394,5 +394,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.0631018, y: 0.085984156, z: 3.3831356}
-  m_Center: {x: -0.080904804, y: -0.55906785, z: -0.06117503}
+  m_Size: {x: 3.0631018, y: 0.38087162, z: 3.3831356}
+  m_Center: {x: -0.080904804, y: -0.4116231, z: -0.06117503}

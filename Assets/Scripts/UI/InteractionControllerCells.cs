@@ -67,7 +67,7 @@ public class InteractionControllerCells : MonoBehaviour
     }
 
     
-    public void BuildTower(TurretBlueprint blueprint, int playerControl = 1) {
+    void BuildTower(TurretBlueprint blueprint, int playerControl = 1) {
          if (PlayerStats.Money < blueprint.cost) { //Если не хватает средств - не строим
             Debug.Log("Not enough shards to build that."); //Вывести на экран сообщение
             return;
@@ -81,7 +81,7 @@ public class InteractionControllerCells : MonoBehaviour
             return;
         }
 
-        if (PlayerStats.role != 2 && _turret.GetComponent<EngineerTower>() == null && playerControl == 1) {
+        if (PlayerStats.role != 2 && _turret.GetComponent<EngineerTower>() == null) {
             Debug.Log("Боевые башни можно строить только в свой ход"); //Вывести на экран сообщение
             Destroy(_turret);
             return;
@@ -114,8 +114,6 @@ public class InteractionControllerCells : MonoBehaviour
     public void ChangeMode(int engineerMode) {
         turret.GetComponent<EngineerTower>().ChangeEngineerMode(engineerMode);
     }
-
-    
 
     public void UpgradeTower() {
         if (upgradeLv == 1) {
@@ -161,47 +159,6 @@ public class InteractionControllerCells : MonoBehaviour
         upgradeLv++;
 
         Debug.Log("The turret upgraded. Shards left: " + PlayerStats.Money);
-    }
-
-    public void UpgradeTowerByTardis() {
-        if (upgradeLv == 1) {
-            if (Tardis.Money < turretBlueprint.upgradeCostLv2) {
-                return;
-            }
-        }
-        else  if (upgradeLv == 2) {
-            if (Tardis.Money < turretBlueprint.upgradeCostLv3) {
-                return;
-            }
-        }
-        
-        if (turret.GetComponent<TurretFindTarget>() != null) {
-            offsetPosition = new Vector3(0f,0.2f,0f);
-        }
-        
-        else if (turret.GetComponent<EngineerTower>() != null) {
-            offsetPosition = new Vector3(0f,1.5f,0f);
-        }
-
-        GameObject _turret = new GameObject();
-        if (upgradeLv == 1) {
-            Tardis.Money -= turretBlueprint.upgradeCostLv2; //снятие средств за улучшение башни
-            //Постройка улучшенной
-            _turret = Instantiate(turretBlueprint.upgradedPrefabLv2, GetBuildPosition(), Quaternion.identity);
-        }
-        else if (upgradeLv == 2) {
-            Tardis.Money -= turretBlueprint.upgradeCostLv3;
-            _turret = Instantiate(turretBlueprint.upgradedPrefabLv3, GetBuildPosition(), Quaternion.identity);
-        }
-        //Уничтожение старой туррели
-        Destroy(turret);
-
-        turret = _turret;
-
-        GameObject beffect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
-        Destroy(beffect, 0.5f);
-
-        upgradeLv++;
     }
 
     // public void SellTurret() {

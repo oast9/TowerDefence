@@ -68,13 +68,11 @@
     <Compile Include="Assets\Scripts\Mechanics\GameMaster.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PhaseManager.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayerStats.cs" />
-    <Compile Include="Assets\Scripts\Mechanics\RoadChoose.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Wave.cs" />
     <Compile Include="Assets\Scripts\Mechanics\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Mechanics\WayPoints.cs" />
     <Compile Include="Assets\Scripts\Minions\Enemy.cs" />
     <Compile Include="Assets\Scripts\Minions\Engineer.cs" />
-    <Compile Include="Assets\Scripts\Tardis.cs" />
     <Compile Include="Assets\Scripts\Turrets\Bullet.cs" />
     <Compile Include="Assets\Scripts\Turrets\EngineerTower.cs" />
     <Compile Include="Assets\Scripts\Turrets\TurretCannon.cs" />

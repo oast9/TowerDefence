@@ -1,7 +1,7 @@
-﻿<Properties StartupConfiguration="{28866EB0-7993-C171-348D-8535A8E3480D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlaneScan.cs">
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlaneScan.cs.meta">
     <Files>
-      <File FileName="Assets/PlaneScan.cs" Line="30" Column="68" />
+      <File FileName="Assets/PlaneScan.cs" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,9 +15,9 @@
   <DisabledProjects>
     <String>Assembly-CSharp-Editor-firstpass.csproj</String>
     <String>Assembly-CSharp-firstpass.csproj</String>
+    <String>Assembly-CSharp.csproj</String>
   </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a94789a8-6266-43f8-995b-e6ff3da8d15c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

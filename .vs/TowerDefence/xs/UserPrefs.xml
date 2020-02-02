@@ -1,5 +1,8 @@
 ﻿<Properties StartupConfiguration="{28866EB0-7993-C171-348D-8535A8E3480D}|">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlaneScan.cs">
+    <Files>
+      <File FileName="Assets/PlaneScan.cs" Line="30" Column="68" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">

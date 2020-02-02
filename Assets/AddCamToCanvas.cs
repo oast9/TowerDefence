@@ -6,7 +6,8 @@ public class AddCamToCanvas : MonoBehaviour
 {
     // Start is called before the first frame update
     public Camera Cam;
-    private void Awake()
+
+    public void AddCam()
     {
         GameObject[] obj = GameObject.FindGameObjectsWithTag("canv");
         for (int i=0; i<obj.Length; i++)

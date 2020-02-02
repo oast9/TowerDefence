@@ -284,6 +284,9 @@ MonoBehaviour:
   startHealth: 15
   shards: 15
   power: 5
+  range: 4
+  target: {fileID: 0}
+  targetTurret: {fileID: 0}
   enemyDieEffect: {fileID: 1529759850895800388, guid: 9aa01099996e68140a17c25b235aae4c,
     type: 3}
   playerControl: 0

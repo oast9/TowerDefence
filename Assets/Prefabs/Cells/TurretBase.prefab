@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20f96bab9841eb4395b1ffbb9a16b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.05873976, g: 0.8301887, b: 0.12870918, a: 0}
+  hoverColor: {r: 0.83137256, g: 0.82480276, b: 0.058823522, a: 0}
   notEnoughtMoneyColor: {r: 1, g: 0.1857836, b: 0, a: 0}
   offsetPosition: {x: 0, y: 0.2, z: 0}
   quadronHoverColor: 0.2
@@ -63,6 +63,7 @@ MonoBehaviour:
     upgradeCostText: {fileID: 0}
   upgradeLv: 1
   ownedBy: 0
+  rend: {fileID: 0}
 --- !u!33 &8091846404943644367
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -88,7 +89,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5005a2ec7e4f5124fb42cd099a287322, type: 2}
+  - {fileID: 2100000, guid: fb07574dbeea13749a24b0931df22c80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

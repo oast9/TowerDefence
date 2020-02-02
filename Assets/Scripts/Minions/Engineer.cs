@@ -7,7 +7,7 @@ public class Engineer : MonoBehaviour
 {
     [Header("Attributes")]
     public float startSpeed = 10f;
-    public string towerTag = "BattleTower";
+   // public string towerTag = "BattleTower";
 
     public int engineerMode = 1; //1 - ремонт, 2 - захват
     public float assimilateTime = 5f; //скорость захвата построек
@@ -123,7 +123,7 @@ public class Engineer : MonoBehaviour
     }
 
     void FindEnemyTower() { //Поиск ближайшей башни
-        GameObject[] towers = GameObject.FindGameObjectsWithTag(towerTag);
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("BattleTower");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestTower = null;
 
@@ -146,7 +146,9 @@ public class Engineer : MonoBehaviour
     }
 
     void FindFriendlyDamagedTower() {
-        GameObject[] towers = GameObject.FindGameObjectsWithTag(towerTag);
+        List<GameObject> towers = new List<GameObject>();
+        towers.AddRange(GameObject.FindGameObjectsWithTag("BattleTower"));
+        towers.AddRange(GameObject.FindGameObjectsWithTag("EngineerTower"));
         float shortestDistance = Mathf.Infinity;
         GameObject nearestTower = null;
 

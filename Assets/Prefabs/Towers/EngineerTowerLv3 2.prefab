@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 6052440532328665943}
   - component: {fileID: 2447392833428850942}
   m_Layer: 0
-  m_Name: EngineerTowerLv3
+  m_Name: EngineerTowerLv3 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 6052440532328665942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.94745, y: 1.419703, z: 10.500922}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_Children:
   - {fileID: 5320188437689827095}
   - {fileID: 9192128612346062117}
@@ -220,10 +220,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 30
   playerControl: 0
-  engineersMaximumCount: 4
+  engineersMaxCount: 0
   engineersCount: 0
   engineersSpawnTime: 3
+  engineerSpawnVector_Y: 0
+  engineerSpawnPlace: {x: 0, y: 0, z: 0}
   engineerPrefab: {fileID: 0}
+  engineerMode: 1
+  healthBar: {fileID: 0}
+  startHealth: 0
+  shards: 10
+  turretDieEffect: {fileID: 0}
 --- !u!1 &8575113265925418797
 GameObject:
   m_ObjectHideFlags: 0

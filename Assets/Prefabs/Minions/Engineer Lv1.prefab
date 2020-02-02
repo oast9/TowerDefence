@@ -280,7 +280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSpeed: 2
-  towerTag: BattleTower
   engineerMode: 1
   assimilateTime: 5
   repairPower: 1

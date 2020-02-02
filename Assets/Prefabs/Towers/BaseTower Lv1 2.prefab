@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 8909253543937889094}
   - component: {fileID: 8909253543937889093}
   m_Layer: 0
-  m_Name: BaseTower Lv1
+  m_Name: BaseTower Lv1 2
   m_TagString: BattleTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 8909253543937889090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.3, y: 0.2, z: 2.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_Children:
   - {fileID: 6993160766502786106}
   - {fileID: 8909253545411013211}
@@ -297,6 +297,7 @@ MonoBehaviour:
   partToRotate: {fileID: 8909253545411013211}
   turretParameters: {fileID: 8909253543937889094}
   playerControl: 0
+  groundDistanse: {x: 0, y: 0, z: 0}
   turnCannonSpeed: 10
   enemyTag: Enemy
 --- !u!114 &8909253543937889094

@@ -55,7 +55,6 @@ public class TurretParameters : MonoBehaviour
     void Die() {
 
         PlayerStats.Money += shards; //получение денег
-        WaveSpawner.enemiesAlive--;
         GameObject dieEffect = Instantiate(turretDieEffect, transform.position, transform.rotation); //активация эффекта смерти
         Destroy(gameObject); //уничтожение объекта
         Destroy(dieEffect, dieEffectLive); //уничтожение эффекта смерти

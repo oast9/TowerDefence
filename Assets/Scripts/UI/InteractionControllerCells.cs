@@ -34,6 +34,7 @@ public class InteractionControllerCells : MonoBehaviour
         rend = GetComponent<Renderer>();
         startColor = rend.material.color; //сохранение базового цвета
         buildManager = BuildManager.instance;
+        StandartHoverColor();
     }
 
     public Vector3 GetBuildPosition () {
@@ -47,8 +48,8 @@ public class InteractionControllerCells : MonoBehaviour
         if (gameObject.tag == "Road") //с дорогой нельзя взаимодействовать
             return;
 
-        if (PlayerStats.role != 2) //TODO: ориентировано на одного игрока. Проверяется только один игрок на способность строить
-            return;
+        // if (PlayerStats.role != 2) //TODO: ориентировано на одного игрока. Проверяется только один игрок на способность строить
+        //     return;
 
         if (turret != null) { //Выбор туррели, если она есть в ячейке
             if(turret.GetComponent<TurretParameters>() != null)
@@ -76,6 +77,12 @@ public class InteractionControllerCells : MonoBehaviour
 
         if (ownedBy != playerControl && _turret.GetComponent<EngineerTower>() == null) {
             Debug.Log("На нейтральной территории нельзя строить боевые башни!"); //Вывести на экран сообщение
+            Destroy(_turret);
+            return;
+        }
+
+        if (PlayerStats.role != 2 && _turret.GetComponent<EngineerTower>() == null) {
+            Debug.Log("Боевые башни можно строить только в свой ход"); //Вывести на экран сообщение
             Destroy(_turret);
             return;
         }
@@ -199,7 +206,7 @@ public class InteractionControllerCells : MonoBehaviour
             if(ownedBy == 0)
                 rend.material.color = startColor;
             if (ownedBy == 1) {
-                rend.material.color = Color.green;
+                rend.material.color = Color.blue;
             }
             if (ownedBy == 2) {
                 rend.material.color = Color.red;

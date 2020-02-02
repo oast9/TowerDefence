@@ -10,6 +10,8 @@ public class TurretFindTarget : MonoBehaviour
     public Transform partToRotate;
     public TurretParameters turretParameters;
     public int playerControl;
+
+    [SerializeField] private Vector3 groundDistanse; //игнор высоты при поиске цели
     
     public float turnCannonSpeed = 10f; //скорость поворота башни
     public string enemyTag = "Enemy";
@@ -52,7 +54,10 @@ public class TurretFindTarget : MonoBehaviour
 
         foreach (GameObject enemy in enemies) { //проходим по всем врагам
             if (enemy.GetComponent<Enemy>().playerControl != playerControl) {
-            float distanceToEnemy = Vector3.Distance(transform.position,
+
+            groundDistanse = new Vector3(transform.position.x, enemy.transform.position.y, transform.position.z);
+            
+            float distanceToEnemy = Vector3.Distance(groundDistanse,
             enemy.transform.position);
             //Вычисляем расстояние к врагу относительно башни
                 if (distanceToEnemy < shortestDistance) { //если враг ближе, чем предыдущее расстояние,
@@ -75,6 +80,6 @@ public class TurretFindTarget : MonoBehaviour
     
     private void OnDrawGizmosSelected() { //отрисовка области видимости башни
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, turretParameters.range);
+        Gizmos.DrawWireSphere(groundDistanse, turretParameters.range);
     }
 }

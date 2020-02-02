@@ -199,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 6052440532328665942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.94745, y: 1.419703, z: 10.500922}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_Children:
   - {fileID: 7806769922957066230}
   - {fileID: 9192128612346062117}
@@ -227,6 +227,10 @@ MonoBehaviour:
   engineerSpawnPlace: {x: 0, y: 0, z: 0}
   engineerPrefab: {fileID: 1693356427, guid: bd8433da7366c7d4e94dab7f285dc678, type: 3}
   engineerMode: 1
+  healthBar: {fileID: 0}
+  startHealth: 0
+  shards: 10
+  turretDieEffect: {fileID: 0}
 --- !u!54 &2315280853095996795
 Rigidbody:
   m_ObjectHideFlags: 0

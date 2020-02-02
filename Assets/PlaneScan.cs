@@ -27,6 +27,7 @@ public class PlaneScan : MonoBehaviour
                 Instantiate(placePrefab, hitPose.position, Quaternion.identity);
                 gameObject.GetComponent<ARPointCloudManager>().SetTrackablesActive(false);
                 gameObject.GetComponent<ARPlaneManager>().SetTrackablesActive(false);
+                gameObject.GetComponent<AddCamToCanvas>().enabled = true;
                 enabled = false;
             }
         }

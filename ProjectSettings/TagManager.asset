@@ -17,6 +17,8 @@ TagManager:
   - Player2
   - Player1
   - TurretBase
+  - Engineer
+  - canv
   layers:
   - Default
   - TransparentFX
